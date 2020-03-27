@@ -4,6 +4,7 @@ COPY . .
 RUN npm install
 
 FROM node:8-alpine
+RUN apk add git
 WORKDIR /workspace
 COPY --from=builder /workspace .
 CMD npm start
